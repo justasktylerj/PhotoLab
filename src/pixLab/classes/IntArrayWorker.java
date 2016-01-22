@@ -105,5 +105,20 @@ public class IntArrayWorker
       }
     }
   }
+  
+  public void getCount()
+  {
+	  
+  }
+  
+  public void getLargest()
+  {
+	  
+  }
+  
+  public void getColTotal()
+  {
+	  
+  }
  
 }
