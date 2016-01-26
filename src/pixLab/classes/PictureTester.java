@@ -19,11 +19,24 @@ public class PictureTester
   }
   
   /** Method to test mirrorVertical */
-  public static void testMirrorVertical()
+  public static void testRandomColor()
+  {
+	  Picture randomBeach = new Picture("beach");
+	  randomBeach.explore();
+  }
+  public static void testMirrorVerticalRightToLeft()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
     caterpillar.explore();
-    caterpillar.mirrorVertical();
+    caterpillar.mirrorVerticalRightToLeft();
+    caterpillar.explore();
+  }
+  
+  public static void testMirrorVerticalLeftToRight()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorVerticalLeftToRight();
     caterpillar.explore();
   }
   
@@ -66,7 +79,8 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    testMirrorVertical();
+    testRandomColor();
+    testMirrorVerticalRightToLeft();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
