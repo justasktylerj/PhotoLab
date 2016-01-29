@@ -99,6 +99,18 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void zeroRed()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+      }
+    }
+  }
+  
   public void zeroGreen()
   {
     Pixel[][] pixels = this.getPixels2D();
@@ -111,10 +123,10 @@ public class Picture extends SimplePicture
     }
   }
   
-  public void zeroRed()
+  public void zeroRedHalf()
   {
 	  Pixel[][] original = this.getPixels2D(); 
-	  for(int row = 0; row < original.length; row++)
+	  for(int row = 0; row < original.length/2; row++)
 	  {
 		  for(int col = 0; col < original[0].length; col++)
 		  {
@@ -171,11 +183,13 @@ public class Picture extends SimplePicture
     * from left to right */
   public void randomColor()
   {
-	  Pixel[][] pixels = this.getPixels2D();
-	  for(Pixel[] row : pixels)
+	  Pixel[][] original = this.getPixels2D();
+	  for(int row = 0; row < original[0].length; row++)
 	  {
-		  for(Pixel currentPixel : row)
+		  for(int col = 0; col < original[0].length; col++)
 		  {
+			  Pixel currentPixel = original[row][col];
+			  
 			  int randomRed, randomBlue, randomGreen;
 			  randomRed = (int)(Math.random() * 256);
 			  randomBlue = (int)(Math.random() * 256);
@@ -215,7 +229,7 @@ public class Picture extends SimplePicture
     int width = pixels[0].length;
     for (int row = 0; row < pixels.length; row++)
     {
-      for (int col = 0; col < width / 2; col++)
+      for (int col = pixels[0].length; col < width / 2; col++)
       {
         leftPixel = pixels[row][col];
         rightPixel = pixels[row][width - 1 - col];
@@ -347,12 +361,16 @@ public class Picture extends SimplePicture
   {
     Picture beach = new Picture("beach.jpg");
     beach.explore();
-//    beach.zeroBlue();
-//    beach.zeroRed();
-//    beach.zeroGreen();
+    beach.mirrorTemple();
+    beach.mirrorVerticalRightToLeft();
     beach.grayScale();
+    beach.zeroRedHalf();
+//  beach.randomColor();
+    beach.zeroBlue();
+//    beach.zeroGreen();
+    
     beach.explore();
-    beach.mirrorHorizontal();
+    
   }
   
 } // this } is the end of class Picture, put all new methods before this
