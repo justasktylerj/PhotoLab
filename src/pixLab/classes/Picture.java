@@ -361,12 +361,12 @@ public class Picture extends SimplePicture
   {
     Picture beach = new Picture("beach.jpg");
     beach.explore();
-    beach.mirrorTemple();
+//    beach.mirrorTemple();
     beach.mirrorVerticalRightToLeft();
-    beach.grayScale();
-    beach.zeroRedHalf();
+//    beach.grayScale();
+//    beach.zeroRedHalf();
 //  beach.randomColor();
-    beach.zeroBlue();
+//    beach.zeroBlue();
 //    beach.zeroGreen();
     
     beach.explore();
