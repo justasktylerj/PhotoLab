@@ -17,7 +17,6 @@ public class PictureTester
     beach.zeroBlue();
     beach.explore();
   }
-  
   /** Method to test mirrorVertical */
   public static void testRandomColor()
   {
@@ -31,7 +30,6 @@ public class PictureTester
     caterpillar.mirrorVerticalRightToLeft();
     caterpillar.explore();
   }
-  
   public static void testMirrorVerticalLeftToRight()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
@@ -39,7 +37,6 @@ public class PictureTester
     caterpillar.mirrorVerticalLeftToRight();
     caterpillar.explore();
   }
-  
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -65,6 +62,85 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testKeepOnlyBlue()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.onlyBlue();
+    beach.explore();
+  }
+  
+  public static void testKeepOnlyRed()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.onlyRed();
+    beach.explore();
+  }
+  
+  public static void testKeepOnlyGreen()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.onlyGreen();
+    beach.explore();
+  }
+  
+  public static void testGrayScale()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.grayScale();
+    beach.explore();
+  }
+  
+  public static void testNegate()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.negate();
+    beach.explore();
+  }
+  
+  public static void testCopy()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.copy(beach, 0, 0);
+    beach.explore();
+  }
+  
+  public static void testFixUnderwater()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.fixUnderwater();
+    beach.explore();
+  }
+  
+  public static void testMirrorArms()
+  {
+    Picture beach = new Picture("snowMan.jpg");
+    beach.explore();
+    beach.mirrorArms();
+    beach.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+    Picture beach = new Picture("seagull.jpg");
+    beach.explore();
+    beach.mirrorGull();
+    beach.explore();
+  }
+  
+  public static void testMirrorDiagonal()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.mirrorDiagonal();
+    beach.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -73,21 +149,21 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     testZeroBlue();
-    //testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
-    //testNegate();
-    //testGrayscale();
-    //testFixUnderwater();
+    testKeepOnlyBlue();
+    testKeepOnlyRed();
+    testKeepOnlyGreen();
+    testNegate();
+    testGrayScale();
+    testFixUnderwater();
     testRandomColor();
     testMirrorVerticalRightToLeft();
     testMirrorTemple();
-    //testMirrorArms();
-    //testMirrorGull();
-    //testMirrorDiagonal();
-    //testCollage();
-    //testCopy();
-    //testEdgeDetection();
+    testMirrorArms();
+    testMirrorGull();
+    testMirrorDiagonal();
+    testCollage();
+    testCopy();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
